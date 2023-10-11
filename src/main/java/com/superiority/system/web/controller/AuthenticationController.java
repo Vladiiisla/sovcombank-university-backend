@@ -12,17 +12,20 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequiredArgsConstructor
+@RequestMapping(AuthenticationController.AUTHENTICATION_REST_URL)
 public class AuthenticationController {
+    public static final String AUTHENTICATION_REST_URL="/api/v1/auth";
     private final AuthenticationService authenticationService;
     private final UserService userService;
 //    private final UserMapper userMapper;
 
     @PostMapping("/login")
-    public JWTResponse login(@Validated @RequestBody JWTRequest loginRequest){
+    public JWTResponse login(@RequestBody JWTRequest loginRequest){
         return authenticationService.login(loginRequest);
     }
 
