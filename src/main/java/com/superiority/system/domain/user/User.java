@@ -1,6 +1,8 @@
 package com.superiority.system.domain.user;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -9,6 +11,8 @@ import java.util.Set;
 
 @Data
 @MappedSuperclass
+@AllArgsConstructor
+@NoArgsConstructor
 public class User implements Serializable {
     // Уникальный идентификатор пользователя.
     @Id
