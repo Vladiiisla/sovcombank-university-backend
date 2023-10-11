@@ -10,9 +10,10 @@ import java.util.Date;
 import java.util.Set;
 
 @Data
-@MappedSuperclass
+//@MappedSuperclass
 @AllArgsConstructor
 @NoArgsConstructor
+@Entity
 public class User implements Serializable {
     // Уникальный идентификатор пользователя.
     @Id
