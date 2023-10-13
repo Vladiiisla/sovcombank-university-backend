@@ -1,5 +1,6 @@
 package com.superiority.system.domain.user.student;
 
+import com.superiority.system.domain.assignment.Assignment;
 import com.superiority.system.domain.user.User;
 import com.superiority.system.domain.course.Course;
 import com.superiority.system.domain.user.candidate.Candidate;
@@ -47,6 +48,8 @@ public class Student extends User {
             inverseJoinColumns = @JoinColumn(name = "cource_id")
     )
     private List<Course> enrolledCourses;
+    @OneToMany(mappedBy = "student")
+    private Set<Assignment> assignments;
     @ManyToOne
     @JoinColumn(name = "mentor_id")
     private Mentor mentor;

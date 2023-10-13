@@ -6,7 +6,8 @@ public enum Role {
     // Роль администратора. Предоставляет полные права на управление системой.
     ROLE_ADMIN,
 
-    ROLE_AUTHOR,
-    ROLE_MODERATOR,
-    ROLE_EDITOR
+    ROLE_STUDENT,
+    ROLE_TEACHER,
+    ROLE_EDITOR,
+    ROLE_MENTOR
 }

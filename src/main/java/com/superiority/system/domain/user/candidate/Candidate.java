@@ -34,4 +34,5 @@ public class Candidate extends User {
     private String educationInstitution;
     @OneToOne(mappedBy = "candidate")
     private Student student;
+
 }

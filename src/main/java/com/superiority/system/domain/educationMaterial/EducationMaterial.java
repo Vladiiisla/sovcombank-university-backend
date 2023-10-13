@@ -1,5 +1,6 @@
 package com.superiority.system.domain.educationMaterial;
 
+import com.superiority.system.domain.course.Course;
 import com.superiority.system.domain.lecture.Lecture;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -45,4 +46,11 @@ public class EducationMaterial {
     private int likes;
     @Column(name = "views")
     private int views;
+    @ManyToMany
+    @JoinTable(
+            name = "education_material_course",
+            joinColumns = @JoinColumn(name = "education_material_id"),
+            inverseJoinColumns = @JoinColumn(name = "course_id")
+    )
+    private List<Course> courses;
 }
