@@ -22,6 +22,6 @@ public class Group {
     private Long id;
     @Column(name = "group_name")
     private String groupName;
-    @OneToMany(mappedBy = "groupName")
+    @OneToMany(mappedBy = "groupForStudents")
     private List<Student> studentList;
 }

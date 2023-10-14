@@ -64,5 +64,5 @@ public class Student extends User {
     private List<LectureFeedback> feedbackForStudent;
     @ManyToOne
     @JoinColumn(name = "groups_id")
-    private Group groupName;
+    private Group groupForStudents;
 }

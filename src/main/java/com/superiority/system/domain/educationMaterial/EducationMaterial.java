@@ -2,6 +2,7 @@ package com.superiority.system.domain.educationMaterial;
 
 import com.superiority.system.domain.course.Course;
 import com.superiority.system.domain.lecture.Lecture;
+import com.superiority.system.domain.user.mentor.Mentor;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -53,4 +54,7 @@ public class EducationMaterial {
             inverseJoinColumns = @JoinColumn(name = "course_id")
     )
     private List<Course> courses;
+    @ManyToOne
+    @JoinColumn(name = "mentor_id")
+    private Mentor mentor;
 }

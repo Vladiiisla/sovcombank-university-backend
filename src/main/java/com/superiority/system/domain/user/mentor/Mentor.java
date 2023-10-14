@@ -1,5 +1,7 @@
 package com.superiority.system.domain.user.mentor;
 
+import com.superiority.system.domain.educationMaterial.EducationMaterial;
+import com.superiority.system.domain.schedule.Schedule;
 import com.superiority.system.domain.user.User;
 import com.superiority.system.domain.user.instructor.Certification;
 import com.superiority.system.domain.user.student.Student;
@@ -32,4 +34,8 @@ public class Mentor extends User {
     private String linkedinSpoken;
     @Column(name = "availability")
     private String availability;
+    @OneToMany(mappedBy = "mentor")
+    private List<Schedule> schedule;
+    @OneToMany(mappedBy = "mentor")
+    private List<EducationMaterial> educationMaterials;
 }
