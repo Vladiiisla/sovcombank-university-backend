@@ -9,5 +9,6 @@ public enum Role {
     ROLE_STUDENT,
     ROLE_TEACHER,
     ROLE_EDITOR,
-    ROLE_MENTOR
+    ROLE_MENTOR,
+    ROLE_SELECTION_COMMITTEE
 }

@@ -1,6 +1,7 @@
 package com.superiority.system.domain.user.student;
 
 import com.superiority.system.domain.assignment.Assignment;
+import com.superiority.system.domain.group.Group;
 import com.superiority.system.domain.user.User;
 import com.superiority.system.domain.course.Course;
 import com.superiority.system.domain.user.candidate.Candidate;
@@ -61,4 +62,7 @@ public class Student extends User {
     private boolean isGraduated; // Флаг, указывающий, окончил ли студент обучение
     @OneToMany(mappedBy = "student")
     private List<LectureFeedback> feedbackForStudent;
+    @ManyToOne
+    @JoinColumn(name = "groups_id")
+    private Group groupName;
 }
