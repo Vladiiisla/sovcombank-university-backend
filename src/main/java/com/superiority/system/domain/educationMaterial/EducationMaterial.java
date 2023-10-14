@@ -2,7 +2,9 @@ package com.superiority.system.domain.educationMaterial;
 
 import com.superiority.system.domain.course.Course;
 import com.superiority.system.domain.lecture.Lecture;
+import com.superiority.system.domain.user.instructor.Instructor;
 import com.superiority.system.domain.user.mentor.Mentor;
+import com.superiority.system.domain.user.student.Student;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -57,4 +59,9 @@ public class EducationMaterial {
     @ManyToOne
     @JoinColumn(name = "mentor_id")
     private Mentor mentor;
+    @ManyToMany(mappedBy = "educationMaterials")
+    private Set<Student> students;
+    @ManyToMany(mappedBy = "educationMaterialsForInstructor")
+    private Set<Instructor> teachers;
+
 }

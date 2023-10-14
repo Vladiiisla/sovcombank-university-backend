@@ -1,6 +1,9 @@
 package com.superiority.system.domain.user.student;
 
 import com.superiority.system.domain.assignment.Assignment;
+import com.superiority.system.domain.assignment.ControlAssignment;
+import com.superiority.system.domain.attendance.Attendance;
+import com.superiority.system.domain.educationMaterial.EducationMaterial;
 import com.superiority.system.domain.group.Group;
 import com.superiority.system.domain.user.User;
 import com.superiority.system.domain.course.Course;
@@ -65,4 +68,14 @@ public class Student extends User {
     @ManyToOne
     @JoinColumn(name = "groups_id")
     private Group groupForStudents;
+    @ManyToMany
+    @JoinTable(name = "student_education_material",
+            joinColumns = @JoinColumn(name = "student_id"),
+            inverseJoinColumns = @JoinColumn(name = "education_material_id"))
+    private Set<EducationMaterial> educationMaterials;
+    @OneToMany(mappedBy = "student")
+    private List<Attendance> attendances;
+    @OneToMany(mappedBy = "student")
+    private List<ControlAssignment> controlAssignments;
+
 }

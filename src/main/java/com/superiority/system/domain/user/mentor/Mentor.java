@@ -37,5 +37,5 @@ public class Mentor extends User {
     @OneToMany(mappedBy = "mentor")
     private List<Schedule> schedule;
     @OneToMany(mappedBy = "mentor")
-    private List<EducationMaterial> educationMaterials;
+    private List<EducationMaterial> educationMaterialsForMentor;
 }

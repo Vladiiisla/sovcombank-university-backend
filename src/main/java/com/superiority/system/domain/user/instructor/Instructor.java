@@ -1,5 +1,6 @@
 package com.superiority.system.domain.user.instructor;
 
+import com.superiority.system.domain.educationMaterial.EducationMaterial;
 import com.superiority.system.domain.user.User;
 import com.superiority.system.domain.course.Course;
 import com.superiority.system.domain.lecture.Lecture;
@@ -42,4 +43,9 @@ public class Instructor extends User {
     private String officeLocation;
     @OneToMany(mappedBy = "instructor")
     private List<Course> coursesTaught; // Список курсов, которые преподаватель ведет
+    @ManyToMany
+    @JoinTable(name = "instructor_education_materials",
+            joinColumns = @JoinColumn(name = "instructor_id"),
+            inverseJoinColumns = @JoinColumn(name = "education_material_id"))
+    private Set<EducationMaterial> educationMaterialsForInstructor;
 }
